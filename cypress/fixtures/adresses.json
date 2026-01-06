@@ -1,0 +1,35 @@
+{
+    "adresses1" : [
+    "https://landscape:somber@dull-ghost.localsite.io/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/produit/ex/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/categorie-produit/sport/sports_exterieur/planche_a_roulettes/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/etiquette-produit/vroum-vroum/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/marque/louis-pasteur/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/panier/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/?s=&post_type=product&category=0",
+
+    "https://landscape:somber@dull-ghost.localsite.io/commander/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_commandes/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_telechargements/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_adresses/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_adresses/facturation/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_adresses/livraison/",
+
+    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/informations_personnelles/",
+  ]
+
+ 
+}
