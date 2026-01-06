@@ -8,7 +8,7 @@ describe("Tests du site talaron fashion", () => {
     cy.visit("https://landscape:somber@dull-ghost.localsite.io/");
   });
 
-  it("Connexion à son compte", () => {
+  xit("Connexion à son compte", () => {
     //cy.visit('https://landscape:somber@dull-ghost.localsite.io/')
     cy.get(".icofont-user-alt-4").realHover();
     //cy.contains('Se déconnecter').click();
@@ -96,6 +96,53 @@ describe("Tests du site talaron fashion", () => {
         username +
         " ? Déconnexion)"
     );
+
+    let cpt = 0;
+    while (cpt < adresses1.length) {
+      //Ouvrir page
+      cy.visit(adresses1[cpt]);
+      //page est ouverte
+      cy.url().should("eq", adresses2[cpt]);
+      //Vérifier qu’un bouton en forme de loupe (voir image en pièce jointe) est présent en haut à droite de la page.
+      //Un bouton en forme de loupe est bien présent en haut à droite de la page.
+      cy.get("#masthead i.icofont-search-2").should("be.visible");
+      //Cliquer sur le bouton en forme de loupe.
+      cy.get("#masthead i.icofont-search-2").click();
+      //Un ruban apparaît en haut de la page.
+      cy.get("#search-bar").should("be.visible");
+      //Vérifier que le ruban contient un champ interactible avec le texte "Rechercher un produit…" superposé dessus .
+      cy.get('#search-bar [name="s"]').should("be.visible");
+      //Vérifier que le ruban contient un bouton en forme de loupe à droite du champ (voir l’image en pièce jointe).
+      cy.get("#Capa_1").should("be.visible");
+      //Le ruban contient bien une barre de recherche.
+      cy.get('#search-bar [name="s"]').should("be.visible");
+      cpt = cpt + 1;
+    }
+  });
+
+  it("Présence d'un bouton d'accès à la barre de recherche 2", function () {
+    cy.visit("https://landscape:somber@dull-ghost.localsite.io/");
+    cy.get(".icofont-user-alt-4").realHover();
+    //cy.contains('Se déconnecter').click();
+    cy.get(
+      ".woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--customer-logout"
+    ).click();
+
+    cy.fixture("credentials").then((credentials) => {
+      cy.get('[name="username"]').click();
+      cy.get('[name="username"]').type(credentials.username);
+      cy.get("#password").click();
+      cy.get("#password").type(credentials.password);
+      cy.get('#customer_login [name="login"]').click();
+      cy.get("#post-83 p:nth-child(2)").should(
+        "have.text",
+        "\n\tBonjour " +
+          credentials.username +
+          " (vous n’êtes pas " +
+          credentials.username +
+          " ? Déconnexion)"
+      );
+    });
 
     let cpt = 0;
     while (cpt < adresses1.length) {
