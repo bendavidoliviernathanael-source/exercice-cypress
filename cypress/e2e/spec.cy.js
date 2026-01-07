@@ -1,14 +1,21 @@
 import "cypress-real-events";
 
-//const username = "oliviernathanael";
-//const password = "azerty";
+const username = "oliviernathanael";
+const password = "azerty";
+
+const urldistanciel = "https://sidewalk:elementary@smiling-glove.localsite.io/"
+const urldistanciel2 = "https://smiling-glove.localsite.io"
+
+const urlpresentiel = "https://landscape:somber@dull-ghost.localsite.io/"
+
+
 
 describe("Tests du site talaron fashion", () => {
   beforeEach(() => {
-    cy.visit("https://landscape:somber@dull-ghost.localsite.io/");
+    cy.visit(urldistanciel);
   });
 
-  xit("Connexion à son compte", () => {
+    it("Connexion à son compte", () => {
     //cy.visit('https://landscape:somber@dull-ghost.localsite.io/')
     cy.get(".icofont-user-alt-4").realHover();
     //cy.contains('Se déconnecter').click();
@@ -41,43 +48,43 @@ describe("Tests du site talaron fashion", () => {
   });
 
   const adresses1 = [
-    "https://landscape:somber@dull-ghost.localsite.io/",
-    "https://landscape:somber@dull-ghost.localsite.io/produit/ex/",
-    "https://landscape:somber@dull-ghost.localsite.io/categorie-produit/sport/sports_exterieur/planche_a_roulettes/",
-    "https://landscape:somber@dull-ghost.localsite.io/etiquette-produit/vroum-vroum/",
-    // "https://landscape:somber@dull-ghost.localsite.io/marque/louis-pasteur/",
-    "https://landscape:somber@dull-ghost.localsite.io/panier/",
-    "https://landscape:somber@dull-ghost.localsite.io/?s=&post_type=product&category=0",
-    "https://landscape:somber@dull-ghost.localsite.io/commander/",
-    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/",
-    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_commandes/",
-    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_telechargements/",
-    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_adresses/",
-    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_adresses/facturation/",
-    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/mes_adresses/livraison/",
-    "https://landscape:somber@dull-ghost.localsite.io/mon-compte/informations_personnelles/",
+    urldistanciel,
+    urldistanciel+"produit/ex/",
+    urldistanciel+"categorie-produit/sport/sports_exterieur/planche_a_roulettes/",
+    //urldistanciel+"letiquette-produit/vroum-vroum/",
+    // "urldistancielmarque/louis-pasteur/",
+    urldistanciel+"panier/",
+    urldistanciel+"?s=&post_type=product&category=0",
+    urldistanciel+"commander/",
+    urldistanciel+"mon-compte/",
+    urldistanciel+"mon-compte/mes_commandes/",
+    urldistanciel+"mon-compte/mes_telechargements/",
+    urldistanciel+"mon-compte/mes_adresses/",
+    urldistanciel+"mon-compte/mes_adresses/facturation/",
+    urldistanciel+"mon-compte/mes_adresses/livraison/",
+    urldistanciel+"mon-compte/informations_personnelles/",
   ];
 
   const adresses2 = [
-    "https://dull-ghost.localsite.io/",
-    "https://dull-ghost.localsite.io/produit/ex/",
-    "https://dull-ghost.localsite.io/categorie-produit/sport/sports_exterieur/planche_a_roulettes/",
-    "https://dull-ghost.localsite.io/etiquette-produit/vroum-vroum/",
-    // "https://dull-ghost.localsite.io/marque/louis-pasteur/",
-    "https://dull-ghost.localsite.io/panier/",
-    "https://dull-ghost.localsite.io/?s=&post_type=product&category=0",
-    "https://dull-ghost.localsite.io/commander/",
-    "https://dull-ghost.localsite.io/mon-compte/",
-    "https://dull-ghost.localsite.io/mon-compte/mes_commandes/",
-    "https://dull-ghost.localsite.io/mon-compte/mes_telechargements/",
-    "https://dull-ghost.localsite.io/mon-compte/mes_adresses/",
-    "https://dull-ghost.localsite.io/mon-compte/mes_adresses/facturation/",
-    "https://dull-ghost.localsite.io/mon-compte/mes_adresses/livraison/",
-    "https://dull-ghost.localsite.io/mon-compte/informations_personnelles/",
+    urldistanciel2+"/",
+    urldistanciel2+"/produit/ex/",
+    urldistanciel2+"/categorie-produit/sport/sports_exterieur/planche_a_roulettes/",
+    //urldistanciel2+"/etiquette-produit/vroum-vroum/",
+    // urldistanciel2+"/marque/louis-pasteur/",
+    urldistanciel2+"/panier/",
+    urldistanciel2+"/?s=&post_type=product&category=0",
+    urldistanciel2+"/commander/",
+    urldistanciel2+"/mon-compte/",
+    urldistanciel2+"/mon-compte/mes_commandes/",
+    urldistanciel2+"/mon-compte/mes_telechargements/",
+    urldistanciel2+"/mon-compte/mes_adresses/",
+    urldistanciel2+"/mon-compte/mes_adresses/facturation/",
+    urldistanciel2+"/mon-compte/mes_adresses/livraison/",
+    urldistanciel2+"/mon-compte/informations_personnelles/",
   ];
 
   xit("Présence d'un bouton d'accès à la barre de recherche", function () {
-    cy.visit("https://landscape:somber@dull-ghost.localsite.io/");
+    cy.visit(urldistanciel);
     cy.get(".icofont-user-alt-4").realHover();
     //cy.contains('Se déconnecter').click();
     cy.get(
@@ -121,7 +128,7 @@ describe("Tests du site talaron fashion", () => {
   });
 
   it("Présence d'un bouton d'accès à la barre de recherche 2", function () {
-    cy.visit("https://landscape:somber@dull-ghost.localsite.io/");
+    cy.visit(urldistanciel);
     cy.get(".icofont-user-alt-4").realHover();
     //cy.contains('Se déconnecter').click();
     cy.get(
